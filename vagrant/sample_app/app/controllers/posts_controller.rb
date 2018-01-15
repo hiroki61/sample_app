@@ -31,6 +31,15 @@ class PostsController < ApplicationController
   	redirect_to post_path(@post.id)
   end
 
+  def destroy
+  	# データ（レコード）を１件取得
+  	@post = Post.find(params[:id])
+  	# レコードをDBから削除
+  	@post.destroy
+  	# post一覧画面へリダイレクト
+  	redirect_to posts_path
+  end
+
 
   # privateは一種の境界線で、「ここから下はcontrollerの中でしか呼び出せません」という意味。
   # privateはControllerファイルの一番下のendのすぐ上に書いて下さい。
