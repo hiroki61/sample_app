@@ -8,6 +8,11 @@ Rails.application.routes.draw do
 
   get '/posts/:id' => 'posts#show', as: 'post'
    # /posts 」というURLでpostsコントローラのindexアクションが実行され「index.html.erb」の内容がビューとして表示されます。
+  # /posts/1 や /posts/3 に該当する
   get '/posts' => 'posts#index'
+
+  get '/posts/:id/edit' => 'posts#edit', as: 'edit_post'
+
+  patch '/posts/:id' => 'posts#update', as:'update_post'
 
 end

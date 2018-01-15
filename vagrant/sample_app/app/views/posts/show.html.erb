@@ -2,3 +2,5 @@
 <%= @post.title %>
 <h1>本文</h1>
 <%= @post.body %>
+<!-- 編集ページへのリンク -->
+<%= link_to "編集", edit_post_path(@post.id) %>
