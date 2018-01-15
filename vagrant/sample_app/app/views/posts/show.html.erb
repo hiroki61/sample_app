@@ -1,6 +1,9 @@
-<h1>タイトル</h1>
+<h2>タイトル</h2>
 <%= @post.title %>
-<h1>本文</h1>
+<h2>本文</h2>
 <%= @post.body %>
+<h2>画像</h2>
+<%= attachment_image_tag @post, :image, :fill, 300, 300, format: 'jpeg' %>
+
 <!-- 編集ページへのリンク -->
 <%= link_to "編集", edit_post_path(@post.id) %>
